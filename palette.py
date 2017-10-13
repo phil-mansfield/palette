@@ -1,13 +1,12 @@
 import matplotlib.pyplot as plt
+import matplotlib as mpl
 
 # Colors picked by hand using http://colorbrewer2.org/ as a base and then
-# micromanaged using coolors.co.
+# modified and micromanaged using coolors.co.
 
 ###########################
 ## Functions and Globals ##
 ###########################
-
-color_index = 0
 
 def pc(*args):
     if len(args) == 0:
@@ -25,12 +24,21 @@ def pc(*args):
     else:
         raise ValueError("pc() takes 2 arguements at most, %d given" %len(args))
 
-#####################
-## Pyplot Wrappers ##
-#####################
+########################
+## Pyplot Configuring ##
+########################
 
-def figure(**kwargs):
-    pass
+def configure(usetex=True):
+    mpl.rc("figure", figsize=(8.0, 8.0))
+    mpl.rc("legend", frameon=False, fontsize=20)
+    mpl.rc("lines", linewidth=3)
+    mpl.rc("text", usetex=usetex)
+    mpl.rc("font", size=24)
+    mpl.rc("xtick.major", pad=5)
+    mpl.rc("xtick.minor", pad=5)
+    mpl.rc("ytick.major", pad=5)
+    mpl.rc("ytick.minor", pad=5)
+    mpl.rc("savefig", bbox="tight")
 
 ##################################
 ## Helper Classes and Functions ##
@@ -252,6 +260,7 @@ gray_palette = [
     "#DCDCDC",
 ]
 
+color_index = 0
 colors = ["black", "red", "blue", "green",
           "orange", "purple", "brown", "gray"]
 short_colors = ["k", "r", "b", "g", "o", "p", "n", "a"]
