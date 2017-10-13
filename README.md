@@ -39,7 +39,7 @@ If you supply both a color name and a float between 0 and 1, it will return a gr
 from palette import pc
 
 for a in np.linspace(0, 1, 10):
-    plt.plot(x1, f(x1, a), pc("r"))
+    plt.plot(x1, f(x1, a), pc("r", a))
 ```
 
 ![color gradations](README_images/color_range.png)
