@@ -27,8 +27,6 @@ plt.plot(x8, y8, pc())
 If you supply a color name (`black`, `red`, `blue`, `green`, `orange`, `purple`, `brown`, or `gray`) it will return that color.
 
 ```Python
-from palette import pc
-
 plt.plot(x1, y1, pc("red"))
 ```
 
@@ -39,8 +37,6 @@ Abbreivations for these colors will also work: (`k`, `r`, `b`, `g`, `o`, `p`, `n
 If you supply both a color name and a float between 0 and 1, it will return a gradation of that color with 0 being the darkest and 1 being the lightest.
 
 ```Python
-from palette import pc
-
 for a in np.linspace(0, 1, 10):
     plt.plot(x1, f(x1, a), pc("r", a))
 ```
