@@ -48,7 +48,7 @@ class Interpolator(object):
 
     def __init__(self, palette):
         self.r, self.g, self.b = split_palette(palette)
-        self.x = [i / float(len(palette) - 1) for i in xrange(len(palette))]
+        self.x = [i / float(len(palette) - 1) for i in range(len(palette))]
 
     def hex_string(self, x0):
         if x0 < 0 or x0 > 1: 
@@ -56,7 +56,7 @@ class Interpolator(object):
 
         x, r, g, b = self.x, self.r, self.g, self.b
 
-        for i in xrange(len(self.x)):
+        for i in range(len(self.x)):
             if x[i] >= x0:
                 if x0 == 1.0: i -= 1
 
@@ -266,8 +266,8 @@ colors = ["black", "red", "blue", "green",
 short_colors = ["k", "r", "b", "g", "o", "p", "n", "a"]
 palettes = [black_palette, red_palette, blue_palette, green_palette,
             orange_palette, purple_palette, brown_palette, gray_palette]
-_interpolators = [Interpolator(palettes[i]) for i in xrange(len(colors))]
+_interpolators = [Interpolator(palettes[i]) for i in range(len(colors))]
 interpolators = dict(
-    {colors[i]: _interpolators[i] for i in xrange(len(colors))},
-    **{short_colors[i]: _interpolators[i] for i in xrange(len(colors))}
+    {colors[i]: _interpolators[i] for i in range(len(colors))},
+    **{short_colors[i]: _interpolators[i] for i in range(len(colors))}
 )
