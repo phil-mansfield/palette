@@ -10,7 +10,7 @@
 import palette
 from palette import pc
 
-palette.configure()
+palette.configure(True) # Change to False to turn off LaTeX compilation.
 
 plt.plot(x1, y1, pc())
 plt.plot(x2, y2, pc())
